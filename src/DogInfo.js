@@ -2,32 +2,21 @@ import React from "react"
 
 class DogInfo extends React.Component {
 
-	isGoodDog(){
-		if (this.props.selectedDog.isGoodDog){
-			return "Good Dog!"
-		} else {
-			return "Bad Dog!"
-		}
-	}
 
 	render(){
-		if (this.props.selectedDog){
-			const dogHaloColor = this.props.selectedDog.isGoodDog ? "yellow" : "red"
-			
+
 			const imgStyle = {
-				boxShadow: `0 0 30px 15px ${dogHaloColor}, 0 0 50px 15px ${dogHaloColor}, 0 0 75px 45px ${dogHaloColor}`
+				boxShadow: `0 0 30px 15px yellow, 0 0 50px 15px yellow, 0 0 75px 45px yellow`
 			}
 
 			return (
 				<div id="dog-info">
-				<img src={this.props.selectedDog.image} style={imgStyle} alt="pup pup"/>
-				<h2>{this.props.selectedDog.name}</h2>
-				<button onClick={this.props.toggleDogGoodness}>{this.isGoodDog()}</button>
+				<img src="https://weloveanimals.me/wp-content/uploads/2017/10/gettyimages-590486672-e1508512743796.jpg" style={imgStyle} alt="pup pup"/>
+				<h2>Mr. Bonkers</h2>
+				<button>{"Good Dog"}</button>
 				</div>
 			)
-		} else {
-			return null
-		}
+
 	}
 }
 

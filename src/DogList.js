@@ -7,7 +7,16 @@ class DogList extends React.Component {
 	render(){
 		return (
       <div id="dog-list">
-        { this.props.dogs.map( d => <DogItem key={d.id} handleClick={this.props.handleClick} dog={d}/> ) }
+        <DogItem />
+        <DogItem />
+        <DogItem />
+        <DogItem />
+        <DogItem />
+        <DogItem />
+        <DogItem />
+        <DogItem />
+        <DogItem />
+        <DogItem />
       </div>
   )
 	}
