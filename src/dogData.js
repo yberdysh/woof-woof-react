@@ -25,7 +25,7 @@ const dogs = [
     },
     {
       id: 5,
-      name: "Lucipher",
+      name: "Lucifur",
       isGoodDog: false,
       image: "https://cdn.shopify.com/s/files/1/1324/6367/collections/Why_all_dogs_love_us_close_up_large.jpg?v=1487160259"
     },
