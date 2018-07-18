@@ -13,7 +13,7 @@ class DogInfo extends React.Component {
 				<div id="dog-info">
 				<img src="https://weloveanimals.me/wp-content/uploads/2017/10/gettyimages-590486672-e1508512743796.jpg" style={imgStyle} alt="pup pup"/>
 				<h2>Mr. Bonkers</h2>
-				<button>{"Good Dog"}</button>
+				<button>Good Dog</button>
 				</div>
 			)
 
