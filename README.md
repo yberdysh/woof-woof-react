@@ -29,6 +29,8 @@ When you have the pup's information, the dog info div should have the following 
  - an img tag with the pup's image url
  - an H2 with the pup's name
  - a button that says "Good Dog!" or "Bad Dog!" based on whether isGoodDog is true or false.
+
+  Additionally, if `isGoodDog` is true, they will have a yellow halo. If `isGoodDog` is false, it will be red.
  Ex:
  ```
   <img src=dog_image_url>
