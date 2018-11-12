@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import dogs from "./dogData"
 
 import DogList from "./DogList"
 import DogInfo from "./DogInfo"
@@ -10,8 +9,14 @@ class App extends Component {
     super(props)
     this.state = {
       dogId: 1,
-      dogs: dogs
+      dogs: []
     }
+  }
+
+  componentDidMount(){
+    fetch("http://localhost:3001/dogs")
+      .then(res => res.json())
+      .then(dogs => this.setState({ dogs }))
   }
 
   toggleIsGoodDog = (dogId) => {
