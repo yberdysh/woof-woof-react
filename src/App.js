@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import dogs from "./dogData"
 
 import DogList from "./DogList"
 import DogInfo from "./DogInfo"
