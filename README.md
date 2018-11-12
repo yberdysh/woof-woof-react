@@ -8,4 +8,4 @@ WHEN LOOKING AT PUP PUPS USER SHOULD BE ABLE TO:
    - YELLOW OR RED HALO AROUND DOG IN DOG INFO TO SHOW GOODNESS
  - CLICK ON GOOD DOG/BAD DOG BUTTON IN ORDER TO TOGGLE PUP GOODNESS
 
-![Showcasing the layout](woof-woof.gif)
+![Showcasing the layout](woof-woof-demo.gif)
