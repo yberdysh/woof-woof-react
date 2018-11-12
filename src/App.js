@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import DogList from "./DogList"
 import DogInfo from "./DogInfo"
 
+const BASE_URL = "http://localhost:3001/dogs"
 
 class App extends Component {
   constructor(props){
@@ -14,19 +15,28 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch("http://localhost:3001/dogs")
+    fetch(BASE_URL)
       .then(res => res.json())
       .then(dogs => this.setState({ dogs }))
   }
 
-  toggleIsGoodDog = (dogId) => {
+  toggleIsGoodDog = (dogId, isGoodDog) => {
     const newDogsArray = this.state.dogs.map(dog => {
       if (dog.id === dogId) {
-        dog.isGoodDog = !dog.isGoodDog
+        dog.isGoodDog = isGoodDog
       }
         return dog
     })
     this.setState({dogs: newDogsArray})
+    fetch(BASE_URL + `/${dogId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        isGoodDog
+      })
+    })
   }
 
   displayDog = (dog) => {
@@ -45,7 +55,7 @@ class App extends Component {
         <DogList dogs={this.state.dogs} handleClick={this.displayDog}/>
         <div id="dog-summary-container">
           <h1>DOGGO:</h1>
-          <DogInfo dog={ this.dogToRender() } handleClick={this.toggleIsGoodDog} />
+          {this.state.dogs[0] && <DogInfo dog={ this.dogToRender() } handleClick={this.toggleIsGoodDog} />}
         </div>
       </div>
     );

@@ -29,6 +29,8 @@ When you have the pup's information, the dog info div should have the following 
  - an img tag with the pup's image url
  - an H2 with the pup's name
  - a button that says "Good Dog!" or "Bad Dog!" based on whether isGoodDog is true or false.
+
+ Additionally, if `isGoodDog` is true, they will have a yellow halo. If `isGoodDog` is false, it will be red.
  Ex:
  ```
   <img src=dog_image_url>
@@ -36,13 +38,8 @@ When you have the pup's information, the dog info div should have the following 
   <button>Good Dog!</button>
  ```
 
- ### STEP 4: TOGGLE GOOD DOG
+### STEP 4: TOGGLE GOOD DOG
  When a user clicks the Good Dog/Bad Dog button, two things should happen:
   - The button's text should change from Good to Bad or Bad to Good
   - The corresponding pup object in the database should be updated to reflect the new isGoodDog value
     - Please note, you can update a dog by making a `PATCH` request to `/pups/:id`
-
-### STEP 5: FILTER GOOD DOGS
-When a user clicks on the Filter Good Dogs button, two things should happen:
- - The button's text should change from "Filter good dogs: OFF" to "Filter good dogs: ON", or vice versa.
- - If the button now says "ON" (meaning the filter is on), then the Dog Bar should only show pups whose isGoodDog attribute is true. If the filter is off, the Dog Bar should show all pups (like normal).

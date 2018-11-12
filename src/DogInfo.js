@@ -3,7 +3,7 @@ import React from "react"
 class DogInfo extends React.Component {
 
 	callHandleClick = () => {
-		this.props.handleClick(this.props.dog.id)
+		this.props.handleClick(this.props.dog.id, !this.props.dog.isGoodDog)
 	}
 
 	goodDogButtonText = () => {
