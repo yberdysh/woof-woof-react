@@ -5,16 +5,7 @@ import DogItem from "./DogItem"
 const DogList = (props) => {
 	return (
     <div id="dog-list">
-      <DogItem />
-      <DogItem />
-      <DogItem />
-      <DogItem />
-      <DogItem />
-      <DogItem />
-      <DogItem />
-      <DogItem />
-      <DogItem />
-      <DogItem />
+      {props.dogs.map(dog => <DogItem handleDogClick={props.handleDogClick} key={dog.id} dog={dog} />)}
     </div>
   )
 }

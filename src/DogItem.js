@@ -1,7 +1,9 @@
 import React from "react"
 
 const DogItem = (props) => {
-	return (<span>Omg a dog</span>)
+
+  console.log("Props inside DogItem", props)
+	return (<span onClick={() => props.handleDogClick(props.dog)} >{props.dog.name}</span>)
 }
 
 export default DogItem
