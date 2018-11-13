@@ -26,6 +26,11 @@ class App extends Component {
     this.setState({selectedDog: dog})
   }
 
+  filterDogs = () => {
+    const newArr = this.state.dogs.filter(dog => dog.isGoodDog)
+    this.setState({dogs: newArr})
+  }
+
   toggleDog(dogId){
     const isGoodDog = this.state.selectedDog.isGoodDog
     fetch(`http://localhost:3001/dogs/${dogId}`, {
@@ -46,6 +51,7 @@ class App extends Component {
       <div>
         <DogList handleDogClick={this.handleDogClick} dogs={this.state.dogs} />
         <div id="dog-summary-container">
+        <button onClick={this.filterDogs} >Filter Good Dogs</button>
           {this.state.selectedDog && <DogInfo toggleDog={this.toggleDog} selectedDog={this.state.selectedDog} />}
         </div>
       </div>
